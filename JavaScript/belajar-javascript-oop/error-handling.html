@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+
+        class MathUtil {
+            static sum(...numbers){
+                if(numbers.length === 0){
+                    throw new Error(`Total harus lebih dari 0`);
+                }else{
+                    let total = 0;
+                    for(const number of numbers){
+                        total += number;
+                    }
+                    return total;
+                }
+            }
+        }
+
+        try{
+            console.info(MathUtil.sum()); //try akan dirunning ketika ada yang error saja
+            console.info("Ilham");
+        }catch(error){
+            console.info(`Terjadi Error : ${error.message}`);
+        }finally{
+            console.info("Program Selesai"); //finally akan selalu dieksekusi
+        }
+
+        console.info("Ini akan selalu di running");
+
+
+        class Counter {
+            #counter = 1;
+
+            next(){
+                try{
+                    return this.#counter;
+                }finally{
+                    this.#counter++;
+                }
+            }
+            
+        }
+
+        const counter = new Counter();
+        console.info(counter.next());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Worker</title>
+  </head>
+  <body>
+    <input type="button" value="Click Me" id="button" />
+    <script>
+      //Akan ngehang
+      // function getData(total){
+      //     for(let i = 0; i < total; i++){
+
+      //         console.info(i);
+
+      //     }
+      // }
+
+      // document.getElementById("button").onclick = function(){
+      //     console.info("start");
+      //     getData(100000);
+      //     console.info("end");
+      //}
+
+      const worker = new Worker("worker.js");
+      worker.addEventListener("message", function (message) {
+        console.info(message.data);
+      });
+
+      document.getElementById("button").onclick = function () {
+        worker.postMessage(2000000);
+      };
+    </script>
+  </body>
+</html>

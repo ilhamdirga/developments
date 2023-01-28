@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodelist Live</title>
+</head>
+<body>
+    <ul id="menu1">
+        <li id="first">first</li>
+        <li id="second">second</li>
+        <li id="third">third</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>ilham</li>
+        <li>dirgantara laksana</li>
+        <li>pamungkas</li>
+    </ul>
+
+    <script>
+        const menu1 = document.getElementById("menu1");
+        const list1 = menu1.childNodes;
+
+        menu1.append(document.createElement("li"));
+        menu1.append(document.createElement("li"));
+        console.info(list1);
+    </script>
+</body>
+</html>

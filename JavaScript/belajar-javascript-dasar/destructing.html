@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructing</title>
+</head>
+<body>
+    <script>
+
+        //desctructing array
+        {
+            const names = ["Ilham", "Dirgantara", "Pamungkas"];
+            const [firstName, middleName, lastName] = names;
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        //destructing object
+        {
+            const names = {
+                firstName: "Ilham",
+                middleName: "Dirgantara",
+                addres: {
+                    city: "Surabaya",
+                    country: "Indonesia",
+                },
+                hobby: "Game",
+            }
+
+            const {firstName, middleName, addres, hobby} = names;
+            console.info(firstName);
+            console.info(middleName);
+            console.info(addres);
+            console.info(hobby);
+        }
+
+        //destructing nested object
+        {
+            const names = {
+                firstName: "Ilham",
+                middleName: "Dirgantara",
+                addres: {
+                    city: "Surabaya",
+                    country: "Indonesia",
+                },
+                hobby: "Game",
+            }
+            const {firstName, middleName, addres:{city, country}, hobby} = names; //nama property harus sama dengan javaScript
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(city); //addres sudah tidak bisa diakses 
+            console.info(country);
+            console.info(hobby);
+
+        }
+
+        //destructing di function parameter pada object
+        {
+            function displayPerson({firstName, middleName, lastName}){
+                console.info(firstName);
+                console.info(middleName);
+                console.info(lastName);
+            };
+
+            person = {
+                firstName: "Ilham",
+                middleName: "Laksana",
+                lastName: "Pamungkas",
+            };
+
+            displayPerson(person);
+
+        }
+
+        //destructing di function parameter pada array
+        {
+
+            function sum([first, second]){
+                return first + second;
+            };
+
+            console.info(sum([12,2]));
+            console.info(sum([10,10]));
+
+        }
+
+        //destructuring deafault value pada array
+        {
+
+            const names = ["Ilham"];
+            const [firstName, middleName = 'Dirgantara', lastName = "Pamungkas"] = names;
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+
+        }
+
+        //destructing default value pada object
+        {
+
+
+            const names = {
+                firstName: "Ilham",
+                middleName: "Budi",
+                lastName: "Pamungkas",
+            }
+
+            const {
+                firstName: namaDepan, 
+                middleName: namaTengah = "Dirgantara", 
+                lastName: namaAkhir} = names;
+            
+                console.info(namaTengah);
+
+
+        }
+     
+    </script>
+</body>
+</html>

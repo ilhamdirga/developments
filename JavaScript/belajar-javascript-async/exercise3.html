@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <h1 id="headers"></h1>
+    <h2 id="head"></h2>
+    <script>
+        function getClock(){
+            const date = new Date();
+            const hours = date.getHours().toString();
+            const minute = date.getMinutes().toString();
+            const seconds = date.getSeconds().toString();
+
+            document.getElementById("headers").textContent = `${hours}:${minute}:${seconds}`;
+        }
+        function getDate(){
+            document.getElementById("head").textContent = new Date().toString();
+        }
+
+        setInterval(getClock, 1000);
+        setInterval(getDate, 1000);
+      
+      //
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+
+        function Person(firstName, lastName){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function(name){
+                console.info(`Hello ${name}, My name is ${this.firstName}`);
+            }
+        }
+
+        Person.prototype.sayGoodbye = function(){
+            console.info("Good Bye");
+        }
+        Person.prototype.run = function(){
+            console.info(`${this.firstName} is Runnning`); //masih bisa dikases meskipun tidak ada pada instance Person
+        }
+
+        const ilham = new Person("Ilham", "Dirgantara");
+        
+        const budi = new Person("Budi", "Nugraha");
+
+        console.info(ilham);
+        console.info(budi);
+
+        //prototype juga bisa diubah valuenya, contoh :
+        ilham.sayGoodbye = function(){
+            console.info("Sampai Jumpa");
+        }
+        ilham.sayGoodbye();
+        ilham.run();
+    </script>
+</body>
+</html>

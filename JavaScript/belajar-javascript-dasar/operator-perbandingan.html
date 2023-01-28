@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Perbandingan</title>
+</head>
+<body>
+    <script>
+        // operator perbandingan, outputnya adalah boolean
+        /*
+        tanda (==) hanya memeriksa outputnya, meski tipe datanya berbeda tetapi outputnya sama maka hasilnya akan true
+        tanda (===) memerika output dan tipe datanya, jadi akan bernilai true jika dan hanya jika nilai dan tipe datanya sama
+        */
+
+        let result = 5 == "5"; //true
+        document.writeln("<p>" + result + "</p>");
+
+        result = 5 === "5"; // false
+        document.writeln("<p>" + result + "</p>");
+
+        result = 5 > 10; //false
+        document.writeln("<p>" + result + "</p>");
+
+        result = 5 < 10; //true
+        document.writeln("<p>" + result + "</p>");
+
+        result = 5 != "5"; //false
+        document.writeln("<p>" + result + "</p>");
+
+        result = 5 !== "5"; //true
+        document.writeln("<p>" + result + "</p>");
+    </script>
+</body>
+</html>

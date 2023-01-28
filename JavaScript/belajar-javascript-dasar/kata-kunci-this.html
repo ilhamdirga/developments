@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kunci This</title>
+</head>
+<body>
+    <script>
+
+        //kata kunci this lebih banyak digunakan dalam object method
+        const person = {
+            name: 'Ilham',
+            sayHello: function(name){
+                console.info(`Hello ${name}, this is ${this.name}`);
+            },
+        };
+        
+        person.sayHello("Dirgantara");
+
+        //percobaan dalam closure
+        function addValue(value){
+            const name = "Ilham";
+            function add(name){
+                console.info(name);
+                return name + " " + value;
+            }
+            return add;
+        }
+
+        const plus = addValue("Dirgantara");
+        console.info(plus("Ilham"));
+    </script>
+</body>
+</html>

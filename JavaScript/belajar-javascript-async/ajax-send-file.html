@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Send File</title>
+</head>
+<body>
+    <!-- HTML -->
+    <form>
+        <label for="username">Username : 
+            <input type="text" id="username" name="username">
+        </label>
+        <br>
+        <label for="password">Password : 
+            <input type="password" id="password" name="password">
+        </label>
+        <br>
+        <label for="profile">Profile : 
+            <input type="file" id="profile" name="profile">
+        </label>
+        <br>
+        <input type="button" id="register" value="Register">
+    </form>
+
+    <h1 id="header"></h1>
+
+    <!-- Script -->
+    <script>
+        function doLogin(){
+            const ajax = new XMLHttpRequest();
+            ajax.open("POST", "https://eo3buivzm3smwwv.m.pipedream.net");
+            ajax.onload = function(){
+                document.getElementById("header").innerText = ajax.responseText;
+            }
+
+            const param = new FormData();
+            param.append("username", document.getElementById("username").value);
+            param.append("password", document.getElementById("password").value);
+
+            const profile = document.getElementById("profile").files;
+            const firstFile = profile.item(0);
+            param.append("profile", firstFile);
+
+            ajax.send(param);
+        }
+
+        document.getElementById("register").onclick = doLogin;
+    </script>
+</body>
+</html>

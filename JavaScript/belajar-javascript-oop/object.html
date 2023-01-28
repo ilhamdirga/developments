@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+
+        {
+        //construction function : constructor versi lama sebelum ES6
+        //cara membuat function construtor adalah dengan membuat nama functionnya dengan diawali huruf kapital agar membedakan dengan function biasa
+        function Person(){
+            this.firstName = ""; //cara penulisan property pada constructor function
+            this.lastName = "";
+            this.sayHello = function(name){
+                console.info(`Hello ${name}, my name is ${this.firstName}`); //cara penulisan method dalam cunstructor function
+            };
+        };
+
+        const eko = new Person();
+        eko.firstName = "Ilham";
+        eko.lastName = "Pamungkas"
+        eko.sayHello("Eko");
+
+        const budi = new Person();
+        budi.firstName = "Budi";
+        budi.lastName = "Nugraha";
+        budi.sayHello("Setiawan");
+
+        console.log(eko);
+        console.log(budi);
+        }
+
+        //parameter di cunstroctor function
+        {
+            function Names(firstName, lastName){
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.sayHello = function(name){
+                    console.info(`Hello ${name}, this is ${this.firstName}`);
+                };    
+            };
+
+
+
+            const ilham = new Names("Ilham", "Pamungkas");
+            ilham.sayHello("Eko");
+            const eko = new Names("Eko", "Kurniawan"); 
+            eko.sayHello('Ilham');
+
+            console.info(ilham);
+            console.info(eko);
+        }
+
+    </script>
+</body>
+</html>

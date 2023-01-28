@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Object</title>
+</head>
+<body>
+    <script>
+        //Penulisan secara langsung
+        const person = {
+            nama: "Ilham Digantara",
+            "nama lengkap": "Ilham Dirgantara LP",
+            alamat: "Indonesia",
+            jurusan: "Matematika",
+        };
+        console.table(person);
+
+        //manambahkan value object
+        const orang = {};
+
+        orang["name"] = "Ilham Dirgantara";
+        orang["nama lengkap"] = "Ilham Dirgantara LP";
+        orang["jurusan"] = "Matematika";
+        orang["alamat"] = "Indoensai";
+        console.table(orang);
+
+        //untuk menghapus object
+        delete person["nama"];
+        console.table(person);
+
+        //untuk mengakses value object
+        const addres = person.alamat;
+        const fullName = person["nama lengkap"];
+        console.info(addres + " "+ fullName);
+        console.info(`Nama : ${orang.name}, Nama langkap : ${orang["nama lengkap"]}`);
+    </script>
+</body>
+</html>

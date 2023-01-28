@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Create</title>
+</head>
+<body>
+   
+    <div id="sampul">
+
+    </div>
+
+    <script>
+        const sampul = document.getElementById("sampul");
+
+        const title = document.createElement("h1");
+        title.textContent = "Ini Judul";
+
+        const desc = document.createElement("p");
+        desc.textContent = "Ini Deskripsi";
+
+        sampul.appendChild(title);
+        sampul.appendChild(desc);
+
+    </script>
+</body>
+</html>

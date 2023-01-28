@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+        const name = "Ilham Dirgantara LP";
+        template = `Name : ${name}`;
+        console.info(template);
+
+        // bisa juga untuk menampilkan expression
+        const nilai = 90;
+        const template2 = `Name : ${name}, lulus : ${nilai > 75}`;
+
+        console.info(template2);
+
+        //bisa juga digunakan untuk menampilkan auto enter
+        const template3 = `
+Nama Saya
+Ilham Dirgantara LP
+Matematika ITS
+        `;
+        document.writeln("<pre>");
+        document.writeln(template3);
+        document.writeln("</pre>");
+    </script>
+</body>
+</html>

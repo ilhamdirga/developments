@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List (2)</title>
+</head>
+<body>
+    <form name="todo">
+        <table>
+            <thead>
+                <tr>
+                    <td><label for="addTodo">Todolist :</label></td>
+                    <td><input type="text" id="addTodo" name="addTodo"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Add"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    
+    <h1>Todo List</h1>
+
+    <form name="saas">
+        <table>
+            <thead>
+                <tr>
+                    <th><label for="search">Search : </label></th>
+                    <th><input type="text" name="search" id="search"></th>
+                </tr>
+            </thead>
+            <tbody id="todolistBody">
+                <tr>
+                    <td><input type="button" value="Done"></td>
+                    <td>Text Content</td>
+                </tr>
+            </tbody>
+        <table>
+    </form>
+
+    <h1>What's You Have Done</h1>
+    <table>
+        <thead>
+            <tr>
+                <th><label for="search2">Search : </label></th>
+                <th><input type="text" id="search2" name="search2"></th>
+            </tr>
+        </thead>
+        <tbody id="doneBody">
+
+        </tbody>
+    </table>
+  
+
+    <script>
+        const  list = ["Belajar", "JavaScript", "Sampai Bisa"];
+        const listDone = [];
+
+        function clearTodoList(){
+            const todolistBody = document.getElementById("todolistBody");
+            while(todolistBody.firstChild){
+                todolistBody.removeChild(todolistBody.firstChild);
+            }
+        }
+
+        function clearDoneList(){
+            const donelistBody = document.getElementById("doneBody");
+            while(donelistBody.firstChild){
+                donelistBody.removeChild(donelistBody.firstChild);
+            }
+        }
+
+        function removeList(index){
+            list.splice(index, 1);
+            displayList();
+        }
+
+        function addTodoList(index, todo){
+            const tr = document.createElement("tr");
+            const tdButton = document.createElement("td");
+            tr.appendChild(tdButton);
+
+            const buttonDone = document.createElement("input");
+            buttonDone.type = "button";
+            buttonDone.value = "Done";
+            buttonDone.onclick = function() {      
+                addDoneList(index); 
+                removeList(index);
+                
+            }
+            tdButton.appendChild(buttonDone);
+
+            const tdTodo = document.createElement("td");
+            tdTodo.textContent = todo;
+            tr.appendChild(tdTodo);
+
+            const todolistBody = document.getElementById("todolistBody");
+            todolistBody.appendChild(tr);
+            
+        }
+
+        function addDoneList(index){
+            //clearDoneList();
+
+            const tr2 = document.createElement("tr");
+            const td2 = document.createElement("td");
+            td2.textContent = list[index];
+            tr2.appendChild(td2);
+            listDone.push(list[index]);
+
+            const doneList = document.getElementById("doneBody");
+            doneList.appendChild(tr2);
+            //console.info(listDone);
+            
+        }
+
+        function displayList(){
+            clearTodoList();
+
+            for(let i = 0; i < list.length; i++){
+                const todo = list[i];
+                //console.info(todo);
+
+                const searchText = document.getElementById("search").value.toLowerCase();
+                if(todo.toLowerCase().includes(searchText)){
+                    if(todo.length !== 0){
+                        addTodoList(i, todo);
+                    } 
+                }                         
+            }
+        }
+
+        function displayDoneList(){
+            clearDoneList();
+            for(let k = 0; k < listDone.length; k++){
+                const todo2 = listDone[k];
+                
+                const searchText2 = document.getElementById("search2").value.toLowerCase();
+                if(todo2.toLowerCase().includes(searchText2)){
+                    addDoneList(k);
+                }
+            }
+        }
+
+        document.forms["todo"].onsubmit = function(event){
+            event.preventDefault();
+            const todo = document.getElementById("addTodo").value;
+            list.push(todo);
+
+            displayList();
+
+            document.forms["todo"].reset();
+        }
+
+        const filter = document.getElementById("search");
+        filter.onkeyup = function(){
+            displayList();
+        }
+        filter.onkeydown = function(){
+            displayList();
+        }
+
+        const filter2 = document.getElementById("search2");
+        filter2.onkeyup = function(){
+            displayDoneList();
+        }
+        filter2.onkeydown = function(){
+            displayDoneList();
+        }
+
+               
+        displayList();
+    </script>
+</body>
+</html>

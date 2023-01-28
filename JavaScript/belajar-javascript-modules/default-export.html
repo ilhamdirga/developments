@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Export</title>
+</head>
+<body>
+    <script type="module">
+        //export default hanya bisa digunakan sekali dalam satu module
+        import {default as defaultSayHi} from "./scripts/default-function.js";
+        import {default as name} from "./scripts/default-variable.js";
+        import {name as nama, subject, default as author} from "./scripts/default-named.js";
+
+
+        defaultSayHi("Ilham");
+        console.info(name);
+
+        console.info(nama);
+        console.info(subject);
+        console.info(author);
+
+    </script>
+</body>
+</html>

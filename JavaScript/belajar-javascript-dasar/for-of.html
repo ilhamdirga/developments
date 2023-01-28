@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Of</title>
+</head>
+<body>
+    <script>
+        //digunakan untuk yang iterable saja, seperti array dan string. sedangkan untuk object tidak bisa
+
+        const names = ["Ilham", "Dirgantara", "Laksana"];
+        for(const name of names){
+            document.writeln(`<p>${name}</p>`);
+        }
+
+        const person = "Ilham Dirgantara Laksana";
+        for(const character of person){
+            document.writeln(`<p>${character}</p>`);
+        }
+    </script>
+</body>
+</html>

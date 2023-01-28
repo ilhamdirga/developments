@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+    <ul>
+        <li class="list">Ilham</li>
+        <li id="myList">IlhamDirgantara</li>
+        <li class="list">IlhamLP</li>
+    </ul>
+
+    <ul>
+        <li class="ilham">Ilham</li>
+        <li class="ilhamdirgantara">IlhamDirgantara</li>
+        <li class="ilhamlp">IlhamLP</li>
+    </ul>
+<body>
+    <script>
+
+        {
+            //selector universal
+            const element = document.querySelectorAll("*");
+            console.info(element);
+        }
+        {
+            //type selector
+            const element = document.querySelectorAll("li");
+            console.info(element);
+        }
+        {
+            //class selector
+            const element = document.querySelectorAll(".list");
+            console.info(element);
+        }
+        {
+            //id selector
+            const element = document.querySelectorAll("#myList");
+            console.info(element);
+        }
+        {
+            //attribute selector
+            const element = document.querySelectorAll("[class]");
+            console.info(element);
+        }
+        {
+            //operator selector
+            const element = document.querySelectorAll("li[class ^= 'ilham']");
+            console.info(element);
+        }
+
+    </script>
+</body>
+</html>

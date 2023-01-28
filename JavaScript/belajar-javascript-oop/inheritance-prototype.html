@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Prototype</title>
+</head>
+<body>
+    <script>
+
+        function Manager(name){
+            this.name = name;
+        }
+
+        function Employee(name){
+            this.name = name;
+        }
+
+        //tidak direkomendasikan
+        //Manager.prototype = Employee.prototype; => cara yang salah
+        Manager.prototype = Object.create(Employee.prototype);
+
+        Manager.prototype.sayHello = function(name){
+            console.info(`Hello ${name}, My name is manager ${this.name}`);
+        }
+        Employee.prototype.sayHello = function(name){
+            console.info(`Hello ${name}, My name is employee ${this.name}`);
+        }
+
+        const manager = new Manager("Ilham");
+        manager.sayHello("Budi");
+        const employee = new Employee("Eko");
+        employee.sayHello("Nugraha");
+
+        console.info(manager);
+        console.info(employee);
+    </script>
+</body>
+</html>

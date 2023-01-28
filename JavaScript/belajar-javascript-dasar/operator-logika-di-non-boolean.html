@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika di HTML</title>
+</head>
+<body>
+    <script>
+        //Operator logika di non boolean
+        // OR (||) paling sering digunakan => OR digunakan untuk mengambil nilai truthy pertama dari kiri ke kanan, jika semuanya falsy maka akan diambil yang paling kanan
+        // AND (&&) digunakan untuk mengambil nilai falsy pertama dari kiri ke kanan, jika semuanya truthy maka yang diambil adalah yang paling kanan
+        
+        //Penerapan OR (||)
+        console.info("Penerapan OR");
+        console.info("hello" || ""); //hello
+        console.info(0 || []) //[]
+        console.info(0 || ""); //""
+        console.info("2" || "hello"); //2
+
+        //Penerapan AND (&&)
+        console.info('Penerapan AND');
+        console.info("hello" && 0); //0
+        console.info("" && []); //""
+        console.info("hello" && 10); //10
+        console.info(0 && false); //0
+        console.info(" " && "ada"); //ada
+
+    
+    </script>
+</body>
+</html>

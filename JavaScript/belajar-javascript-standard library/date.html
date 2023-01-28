@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <script>
+
+        {
+            const date1 = new Date();
+            console.info(date1);
+
+            const date2 = new Date(2021, 3, 3);
+            console.info(date2);
+
+            const date3 = new Date(2021,  10, 10, 9, 10, 59, 123);
+            console.info(date3);
+
+            const date4 = new Date(1671701880492);
+            console.info(date4);
+        }
+
+        {
+            //epoch & unix timestamp
+            const date1 = new Date();
+            console.info(date1.getTime());
+
+            const date2 = new Date(2021, 3, 3);
+            console.info(date2.getTime());
+
+            const date3 = new Date(2021,  10, 10, 9, 10, 59, 123);
+            console.info(date3.getTime());
+
+            const date4 = new Date(1671701880492);
+            console.info(date4.getTime());
+
+            const date5 = Date.now();
+            const date6 = new Date(date5);
+            console.info(date6);
+        }
+
+        {
+            //Parsing Date
+            const date1 = Date.parse("2022-12-22T16:44:23.123+07:00");
+            console.info(date1); 
+
+            const date2 = new Date(date1);
+            console.info(date2);
+        }
+
+        {
+            //Date getter dan setter
+            const date1 = Date.parse("2022-12-22T16:44:23.123+07:00");
+
+            const date2 = new Date(date1);
+
+            //date2.setFullYear(2021);
+            console.info(date2.getFullYear());
+            console.info(date2.getMonth());
+            console.info(date2.getDate());
+            console.info(date2.getHours());
+            console.info(date2.getMinutes());
+            console.info(date2.getSeconds());
+            console.info(date2.getMilliseconds());
+            console.info(date2.getTimezoneOffset());
+
+
+
+        }
+
+    </script>
+</body>
+</html>

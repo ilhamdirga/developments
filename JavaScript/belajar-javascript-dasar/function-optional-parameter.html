@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Optional Parameter</title>
+</head>
+<body>
+    <script>
+        //function pada js tidak harus ada parameter dan memiliki nilai, secara default, nilai parameternya jika tidak diberikan nilai maka niali paramter tersebut akan undefined
+       function sayHello(firstnName, middleName, lastName){
+        console.info(firstnName);
+        console.info(middleName);
+        console.info(lastName);
+       }
+
+       sayHello();
+       sayHello("Ilham");
+       sayHello("Ilham", "Dirgantara", "Pamungkas");
+    </script>
+</body>
+</html>

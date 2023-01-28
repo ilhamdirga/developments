@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP</title>
+</head>
+<body>
+    <script>
+
+        const map = new Map();
+
+        map.set("name", "Ilham Dirgantara");
+        map.set("address", "Indonesia");
+        console.info(map);
+
+        map.forEach((value, key) => console.info(`${key} : ${value}`));
+
+        for(const key of map){
+            console.info(`${key[0]} : ${key[1]}`);
+        }
+
+    </script>
+</body>
+</html>

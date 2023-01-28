@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <form name="addForm">
+        <label for="add">
+            Todo : <input type="text" id="add" name="add">
+        </label>
+        <br>
+        <input type="submit" value="Add">
+    </form>
+
+    <h1>Todo List</h1>
+    <div id="field">
+        Filter : <input type="filter">
+    </div>
+
+    <script>
+        document.forms["addForm"].onsubmit = function(event){
+            const field = document.getElementById("field");
+            const adds = document.getElementById("add").value;
+
+            
+            const add = document.createElement("p");
+            add.textContent = `${adds}`;
+            field.appendChild(add);
+
+
+            event.preventDefault();
+            document.forms["addForm"].reset();
+        }
+    </script>
+</body>
+</html>

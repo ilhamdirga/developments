@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reguler Expression</title>
+</head>
+<body>
+    <script>
+
+        {
+            const regex1 = new RegExp("Eko");
+            const regex2 = /Ilham/;
+            const regex3 = /eko/;
+            const regex4 = new RegExp(/ilham/);
+
+            const name = "Ilham dan Eko";
+
+            const result = regex1.exec(name);
+            console.info(result);
+
+            const test = regex2.test(name);
+            console.info(test);
+
+            const result2 = regex3.exec(name);
+            console.info(result2);
+
+            const test2 = regex4.test(name);
+            console.info(test2);
+        }
+
+        {
+            const regex1 = /ilham/ig;
+            const regex2 = /eko/ig;
+
+            const name = "Ilham dan Eko berenang\ndi kolam renang\noke Ilham dan EKO sangat asyik sekali";
+
+            // const result = regex1.exec(name);
+            // console.info(result);
+
+            let result;
+            while((result = regex1.exec(name)) !== null){
+                console.info(result);
+            }
+
+            while((result = regex2.exec(name)) !== null){
+                console.info(result);
+            }
+
+        }
+        
+        {
+
+            //advance regexp
+            const regex = /e.[aiueo]/ig;
+            const text = "eko\nedo epo\nefo elo\neyo";
+
+            const result = text.match(regex);
+            console.info(result);
+
+            const result2 = text.search(regex);
+            console.info(result2);
+
+            const result3 = text.replace(regex, "y");
+            console.info(result3);
+
+            const result4 = text.split(/e/ig);
+            console.info(result4);
+
+            const result5 = text.search(/e.o/igm);
+            console.info(result5);
+
+
+        }
+
+    </script>
+</body>
+</html>

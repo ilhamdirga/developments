@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+
+        const sayHello = (name) => {
+            const say = `Hello ${name}`;
+            console.info(say);
+        };
+        sayHello("Ilham");
+
+        //jika hanya 1 baris, bisa tidak menggunakan block {}
+        //jika hanya 1 baris dan 1 parameter, maka penulisan paramter bisa tidak menggunakan tanda ()
+        const sayHay = (name) => console.info(`Hello ${name}`);
+        sayHay("Ilham");
+
+        const sumReturn = (first, second) => {
+            return first + second;
+        }
+        console.info(sumReturn(100,100));
+
+        //bisa tidak menggunakan return jika hanya 1 baris function arrow
+        const sumNoReturn = (first, second) => first + second;
+        console.info(sumNoReturn(100,100));
+    </script>
+</body>
+</html>

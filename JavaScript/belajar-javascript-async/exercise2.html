@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 2</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <!-- <table>
+        <tr>
+            <td>Username : </td>
+            <td><input type="text" name="username" id="username"></td>
+        </tr>
+        <tr>
+            <td>Password : </td>
+            <td><input type="text" name="password" id="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" id="addButton" value="Add"></td>
+        </tr>
+    </table> -->
+    <h1 id="header"></h1>
+    <!-- Script -->
+    <script>
+      function getProduct() {
+        const request = new Request(
+          "https://eotjo8aum60e5o4.m.pipedream.net/",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }
+        );
+        const response = fetch(request);
+        return response.then((response) => response.json());
+      }
+
+      getProduct().then((response) => console.info(response));
+
+      async function getName() {
+        const response = await getProduct();
+        return response.about;
+      }
+
+      getName().then((productName) => {
+        console.info(productName);
+      });
+    </script>
+  </body>
+</html>

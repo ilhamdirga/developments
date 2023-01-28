@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evercise</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Username :</th>
+          <th><input type="text" id="username" name="username" /></th>
+        </tr>
+        <tr>
+          <th>Password :</th>
+          <th><input type="text" name="password" id="password" /></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td><input type="button" id="add" value="Add" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h1>List Username dan Password</h1>
+    <table>
+      <tbody id="bodyList">
+        <tr>
+          <td>Username :</td>
+          <td id="forUsername"></td>
+        </tr>
+        <tr>
+          <td>Password :</td>
+          <td id="forPassword"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function doAdd() {
+        const request = new Request("api/product4.json", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+
+        const response = fetch(request);
+
+        response.then((response) => response.json());
+
+        getPassword().then((username) => {
+          document.getElementById("forPassword").innerText = username;
+        });
+      }
+
+      function getForm() {
+        const request = new Request("https://eotjo8aum60e5o4.m.pipedream.net", {
+          method: "GET",
+        });
+        const response = fetch(request);
+        return response.then((response) => response.json());
+      }
+
+      async function getPassword() {
+        try {
+          const name = await getForm();
+          return name.username;
+        } catch (e) {
+          return "Username not Found";
+        }
+      }
+
+      document.getElementById("add").onclick = doAdd;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+    <script>
+
+        const input = "12345";
+        const data = Number(input);
+        console.info(typeof input); //string
+        console.info(typeof data); //number
+
+        console.info(Number.MAX_VALUE);
+        console.info(Number.MIN_VALUE);
+        console.info(Number.MAX_SAFE_INTEGER);
+        console.info(Number.MIN_SAFE_INTEGER);
+
+        console.info(Number.isInteger(data));
+        console.info(Number.isNaN(data));
+
+        const number = "123456";
+        const num = Number(number);
+        console.info(num.toString(2)); //mengubah ke radix 
+        console.info(num.toLocaleString("id-ID"));
+
+    </script>
+</body>
+</html>

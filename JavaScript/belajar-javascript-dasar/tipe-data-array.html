@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Array</title>
+</head>
+<body>
+    <script>
+        let names = [];
+        names.push("Ilham", "Dirgantara"); //untuk mendambahkan nilai pada array
+        names.push("laksana", ["Matematika", "ITS"]);
+        names[0] = "ilhammm"; //untuk mengubah data di posisi index
+        console.table(names);
+
+        delete names[0]; //untuk menghapus nilai pada array, tapi tidak menghapus indexnya
+        const length = names.length;
+        console.table(names);
+        console.info(length);
+    </script>
+</body>
+</html>

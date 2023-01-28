@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi String dan Number</title>
+</head>
+<body>
+    <script>
+        /*
+        parseInt => untuk konversi ke bilangan bulat (tidak membulatkan)
+        parseFloat => untuk konversi ke bilangan pecahan
+        Number => menerima semua jenis angka
+        number.toString() => konversi number ke string
+        */
+        const a = parseInt("1.9"); //angka dibelakang (.) tidak akan dibaca
+        const b = 1;
+        const sum = a+b; //2
+        document.writeln(`<p>${sum}</p>`); 
+
+        const c = parseFloat("1.9"); //1.9
+        document.writeln(`<p>${c}</p>`);
+
+        const d = Number("1.9"); //1.9
+        const e = Number("1"); //1
+        const sum2 = d + e; //2.9
+        document.writeln(`<p>${sum2}</p>`);
+
+        const num = 1;
+        const num1 = num.toString();
+        const num2 = 1;
+        const total = num1 + num2; //11 => karena num1 telah mengubah num menjadi string
+        document.writeln(`<p>${total}</p>`);
+
+
+        //Not A Number (NaN)
+        //contoh
+
+        const f = parseInt("1salah"); //kata setelah number (1) tidak akan dibaca
+        document.writeln(`<p>${f}</p>`);
+        const g = parseFloat("1.12salah"); //kata setelah number(2) tidak akan dibaca
+        document.writeln(`<p>${g}</p>`);
+        const h = Number("1salah"); //NaN
+        document.writeln(`<p>${h}</p>`);
+        const i = Number("1.12salah"); //NaN
+        document.writeln(`<p>${i}</p>`);
+
+        //Penjumlahan NaN
+        const j = Number("salah"); 
+        const totalNaN = j + 100; //NaN
+        document.writeln(`<p>${totalNaN}</p>`);
+        
+        //periksa NaN => isNan()
+        const k = isNaN(2);
+        document.writeln(`<p>${k}</p>`); //false
+
+        document.writeln(`<p>${isNaN(j)}</p>`); //true
+        document.writeln(`<p>${isNaN(f)}</p>`); //false
+        document.writeln(`<p>${isNaN(h)}</p>`); //true
+        document.writeln(`<p>${isNaN(d)}</p>`);
+        document.writeln(`<p>${isNaN(NaN)}</p>`); //true
+    
+       
+
+    </script>
+</body>
+</html>

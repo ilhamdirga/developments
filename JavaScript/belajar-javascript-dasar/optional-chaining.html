@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining</title>
+</head>
+<body>
+    <script>
+        //optional chaining digunakan untuk mengecek eksistensi suatu property dalam object
+        //caranya dengan menggunakan tanda tanya
+
+        //contoh dengan cara yang bertele-tele
+        const person = {
+            address:{
+                country: "Indonesia",
+            },
+        };
+        let country;
+        document.writeln("Sukses")
+        if(person.address !== null && person.address !== undefined){
+            country = person.address.country;
+        }
+        document.writeln(`<p>${country}</p>`)
+
+        //dengan cara optional chaining
+        const siswa = {
+            address: {
+                village: "KUNJANG",
+            },
+        }
+        village = siswa?.address?.village;
+        document.writeln(`<p>${village}</p>`);
+        city = siswa?.address?.city;
+        document.writeln(`<p>${city}</p>`)
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+    "firstName":"Ilham",
+    "middleName":"Dirgantara",
+    "lastName":"Pamungkas",
+    "addres":{
+        "country":"Indonesia","city":"Surabaya"
+    },
+    "hobby":[
+        "coding","games","youtube"
+    ]
+}

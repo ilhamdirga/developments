@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name : </td>
+            <td id="name"></td>
+        </tr>
+        <tr>
+            <td>ID : </td>
+            <td id="id"></td>
+        </tr>
+        <tr>
+            <td>Year : </td>
+            <td id="year"></td>
+        </tr>
+    </table>
+    <script>
+
+    function getProduct(){
+        return new Promise(function(resolve, reject){
+            const ajax = new XMLHttpRequest();
+            ajax.open("GET", "api/product.json");
+            ajax.onload = function(){
+                if(ajax.status === 200){
+                    resolve(ajax.responseText);
+                }else{
+                    reject(`Error  ${ajax.status}`);
+                }
+            }
+            ajax.send();
+        })
+     }        
+
+     getProduct()
+        // .then(function(response){
+        //     return JSON.parse(response);
+        // })
+        .then(function(response){
+            const json = JSON.parse(response);
+            document.getElementById("name").innerText = json.name;
+            document.getElementById("id").innerText = json.id;
+            document.getElementById("year").innerText = json.year; 
+        })
+        .catch(function(error){
+            document.getElementById("name").innerText = error;
+            document.getElementById("id").innerText = error;
+            document.getElementById("year").innerText = error; 
+        })
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <!-- HTML -->
+    <form name="todolist">
+        <table>
+            <thead>
+                <tr>
+                    <th><label for="todo">Todo : </label></th>
+                    <th><input type="text" id="todo" name="todo" required></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <h1>Todo List</h1>
+
+    <form name="namelist">
+        <table>
+           <thead>
+                <tr>
+                    <th><label for="search">Search : </label></th>
+                    <th><input type="text" id="search" name="search"></th>
+                </tr>
+           </thead>
+           <tbody  id="bodylist">
+                <tr>
+                    <td><input type="button" value="Done"></td>
+                    <td>Text Content</td>
+                </tr>
+           </tbody>
+        </table>
+    </form>
+
+    <h1>Whats Have You Done</h1>
+
+    <table id="tableDoneList">
+        
+    </table>
+
+    <!-- Script -->
+    <script>
+        const list = [
+            "Belajar JavaScript Dasar",
+            "Belajar JavaScript OOP",
+            "Belajar JavaScript DOM"
+        ];
+        const doneList = [];
+
+        //clearList
+        function clearTodoList(){
+            const todolistBody = document.getElementById("bodylist");
+            while(todolistBody.firstChild){
+                todolistBody.removeChild(todolistBody.firstChild);
+            }
+        }
+
+        //removeList
+        function removeList(index){
+            list.splice(index, 1);
+            displayList();
+        }
+
+        //addDoneList
+        function addDoneList(index){
+            const trDone = document.createElement("tr");
+            const tdTodo = document.createElement("td");
+            tdTodo.textContent = list[index];
+            trDone.appendChild(tdTodo);
+
+            const tableDoneList = document.getElementById("tableDoneList");
+            tableDoneList.appendChild(trDone);
+        }
+
+        //addList
+        function addList(index, todo){
+            const tr = document.createElement("tr");
+            const tdButton = document.createElement("td");
+            tr.appendChild(tdButton);
+
+            const doneButton = document.createElement("input");
+            doneButton.type = "submit";
+            doneButton.value = "Done";
+            doneButton.onclick = function(){
+                
+                addDoneList(index);
+                removeList(index);
+                
+            }
+            tdButton.appendChild(doneButton);
+
+            const tdTodo = document.createElement("td");
+            tdTodo.textContent = todo;
+            
+            tr.appendChild(tdTodo);
+
+            const bodyList = document.getElementById("bodylist");
+            bodyList.appendChild(tr);
+        }
+
+        //displayList
+        function displayList(){
+            clearTodoList();
+            for(let i = 0; i < list.length; i++){
+                todo = list[i];
+
+                const search = document.getElementById("search").value.toLowerCase();
+                if(todo.toLowerCase().includes(search)){
+                    addList(i, todo);
+                }                            
+          }
+
+        }
+
+        document.forms["todolist"].onsubmit = function(event){
+            event.preventDefault();
+            const todo = document.getElementById("todo").value;
+            if(!todo.trim()){
+                alert("ndak boleh kosong");
+                document.forms["todolist"].reset();
+                return;
+            }
+            list.push(todo);
+            
+            displayList();
+            
+            document.forms["todolist"].reset();
+            
+        }
+
+        const search = document.getElementById("search");
+        search.onkeyup = function(){
+            displayList();
+        };
+        search.onkeydown = function(){
+            displayList();
+        }
+
+        displayList();
+        
+        
+    </script>
+</body>
+</html>

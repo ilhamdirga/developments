@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Value</title>
+</head>
+<body>
+    <script>
+
+        function sayHelloWorld(firstName, lastName){
+            const say = `Hello ${firstName} ${lastName}`;
+            return say;
+        }
+        const hai = sayHelloWorld("Ilham", "Pamungkas");
+        document.writeln(`${hai}`);
+
+        function getValue(value){
+            if(value > 90){
+                return "A";
+            }else if(value > 80){
+                return "B";
+            }else if(value > 70){
+                return "C";
+            }else if(value > 60){
+                return "D";
+            }else{
+                return "E";
+            }
+        };
+        const result = getValue(95);
+        document.writeln(`<p>${result}</p>`);
+
+        function isContains(array, searchValue){
+            for(const element of array){
+                console.info(`Element ${element}`);
+                if(element === searchValue){
+                    return true;
+                }
+            }
+            return false;
+        };
+        const array = [1,2,3,12,3234,2,1,2,123,43,2,5,10];
+        const search = 5;
+        const found = isContains(array, search);
+        document.writeln(`<p>${found}</p>`);
+
+    </script>
+</body>
+</html>

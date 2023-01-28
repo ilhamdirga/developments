@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika</title>
+</head>
+<body>
+    <script>
+        /*
+        Operator Logika :
+        && => dan => hanya bernilai true jika dan hanya jika objek perbandingannya bernilai true semua
+        \\ => atau => hanya bernilai false jika dan hanya jika objek perbandingannya bernilai false semua
+        ! => kebalikan
+        */
+
+        let nilaiUjian = 90;
+        let nilaiAbsensi = 90;
+
+        let lulusUjian = nilaiUjian > 70; 
+        document.writeln(lulusUjian);
+        let lulusAbsensi = nilaiAbsensi > 70;
+        document.writeln(lulusAbsensi);
+
+        let lulus = lulusUjian && lulusAbsensi;
+        document.writeln("\\" + lulus);
+    </script>
+</body>
+</html>

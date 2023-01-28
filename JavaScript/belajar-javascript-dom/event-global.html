@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Global</title>
+</head>
+<body>
+    <input id="clickMe" type="button" value="Click Me!">
+
+    <script>
+        //Tidak bisa menggunakan lebih dari satu perintah
+        const button = document.getElementById("clickMe");
+        
+        button.onclick = function(){
+            button.setAttribute("value", "Already Clicked!")
+
+            console.info("Already Clicked")
+        }
+    </script>
+</body>
+</html>

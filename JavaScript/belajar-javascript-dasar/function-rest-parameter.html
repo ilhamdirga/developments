@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Rest Parameter</title>
+</head>
+<body>
+    <script>
+
+        function sayTotal(name, ...data){
+            let total = 0;
+            for(const element of data){
+                total += element;
+            }
+            document.writeln(`<p>Total of ${name} is ${total}</p>`);
+        };
+
+        sayTotal("Orange", 1, 2, 3, 4, 5, 6);
+
+        //spread syntax dalam rest parameter (digunakan untuk memasukkan array)
+        const angka = [1,2,3,4,5,6,7,8,9,10];
+        sayTotal("Apple", ...angka);
+
+        //arguments (sama seperti rest parameter), tapi ini digunakan pada js zaman dahulu sebelum ada rest parameter
+        function sayJumlah(){
+            let total = 0;
+            for(const element of arguments){
+                total += element;
+            }
+            document.writeln(`<p>Total is ${total}</p>`);
+        }
+
+        sayJumlah(...angka);
+
+    </script>
+</body>
+</html>

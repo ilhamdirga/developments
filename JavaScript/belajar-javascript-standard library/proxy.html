@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy</title>
+</head>
+<body>
+    <script>
+
+        const target = {
+            middleName: "Dirgantara Laksana",
+        };
+
+        //Proxy Handler
+        
+        const handler = {
+            get: function(target, property){
+                console.info(`Get property : ${property}`);
+                return target[property];
+            },
+            set: function(target, property, value){
+                if(value === null){
+                    throw new Error(`value dari ${property} tidak boleh NULL`);
+                }
+                console.info(`Change property ${property} : ${value}`);
+                target[property] = value;
+            }
+        };
+
+        const proxy = new Proxy(target, handler);
+
+        proxy.firstName = "Ilham";
+        proxy.lastName = "Pamungkas";
+
+        console.info(proxy.firstName);
+        console.info(proxy.middleName);
+        console.info(proxy.lastName);
+        console.info(target);
+
+    </script>
+</body>
+</html>
