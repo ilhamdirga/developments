@@ -10,6 +10,6 @@ worker2.addListener("message", (message) => {
     console.info(`Thread-${threadId} receive data from worker-${message}`);
 })
 
-
+//
 worker1.postMessage(2);
 worker2.postMessage(2);
