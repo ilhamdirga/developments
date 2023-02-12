@@ -2,21 +2,21 @@
   "name": "belajar-nodejs-npm",
   "version": "1.0.0",
   "description": "Belajar NodeJS NPM",
-  "exports" : {
-    "." : "./index.js",
-    "./write" : "./writeFile.js"
+  "exports": {
+    ".": "./index.js",
+    "./write": "./writeFile.js"
   },
   "scripts": {
     "prestart": "echo 'Before start application' ",
     "start": "node index.js",
     "poststart": "echo 'After start application' ",
-    "run" : "node index.js",
+    "run": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ilham Dirgantara",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "lodash" : "4.17.21"
+    "lodash": "^4.17.21"
   }
 }
