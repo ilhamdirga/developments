@@ -1,6 +1,6 @@
 {
   "name": "belajar-nodejs-npm-library-dirgan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Belajar NodeJS NPM Library",
   "main": "index.js",
   "type": "module",
@@ -14,5 +14,10 @@
     "Library"
   ],
   "author": "Ilham Dirgantara LP",
-  "license": "ISC"
+  "license": "ISC",
+  "exports": {
+    "." : "./index.js",
+    "./filter" : "./filter.js"
+  }
+  
 }
