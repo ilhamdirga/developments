@@ -12,7 +12,6 @@ afterEach(() => {
     console.info("After Each");
 })
 
-
 test("first test", () => {
     expect(20+20).toBe(40);
     console.info("first test");
