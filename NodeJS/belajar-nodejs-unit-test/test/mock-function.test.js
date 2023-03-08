@@ -17,9 +17,9 @@ test("Mocking Test Function", () => {
 test("Test Without Mocking", () => {
     const logging = (number) => {
         console.info(number);
-
         calculate(sayHello([10,10,10])).toBe(30);
     }
+    
 })
 
 
