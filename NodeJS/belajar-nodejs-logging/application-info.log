@@ -1,0 +1,6 @@
+info: Hello Info {"ms":"+0ms","timestamp":"2023-03-09T15:31:59.377Z"}
+info: Hello Info {"ms":"+3ms","timestamp":"2023-03-09T15:31:59.380Z"}
+info: Hello Info {"ms":"+1ms","timestamp":"2023-03-09T15:31:59.381Z"}
+error: Hello Error {"ms":"+1ms","timestamp":"2023-03-09T15:31:59.382Z"}
+error: Hello Error {"ms":"+1ms","timestamp":"2023-03-09T15:31:59.383Z"}
+error: Hello Error {"ms":"+1ms","timestamp":"2023-03-09T15:31:59.384Z"}
